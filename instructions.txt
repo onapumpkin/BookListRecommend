@@ -1,0 +1,99 @@
+Assignment
+
+### Make a REST API Function to Recommend Books for Two Users to Read Together
+
+Your REST function will be given the IDs of two users. From that call you will be expected to return a JSON payload containing the recommended books for the two given IDs.
+
+Get Two Lists of Authors, Up to Five Authors Listed Per Person from the Database
+- You may presume the Author with the most works is the one being referred to 
+  if multiple authors w/ the same name exist. 
+- Of the authors the two users enjoy, find what genres, aka Subjects, 
+  are most prominent in the works of the authors. (Use a max of 100 books per author as a sample size.)
+
+Find the subject/genre most common amongst both lists of authors. 
+(ex: List 1 has 3 authors that have written fantasy, and list 2 has 4 authors that have written fantasy.)
+- Only recommend books still in print. (Defined as published in the last 2 years)
+- Only fetch 50 books per subject/genre.
+- Recommend the three most recent books of that subject/genre 
+  - provide the title, author and a description, if available, of each.
+
+
+Output from test
+Response: {
+    "firstBookList": {
+        "username": "onapumpkin",
+        "recommendedBooks": [
+            {
+                "id": "f477df9b-7ef6-400e-94c1-e4d6ce35bcf0",
+                "title": "Book of Frufru 25",
+                "author": {
+                    "id": "2",
+                    "name": "Robin McKinley"
+                },
+                "description": "",
+                "genre": "fantasy",
+                "publicationDate": "2024-12-26T00:00:00Z"
+            },
+            {
+                "id": "76e3d330-c225-4eae-916a-0a37fdc5b07c",
+                "title": "Book of Frufru 49",
+                "author": {
+                    "id": "4",
+                    "name": "Upset Cow"
+                },
+                "description": "",
+                "genre": "fantasy",
+                "publicationDate": "2024-12-22T00:00:00Z"
+            },
+            {
+                "id": "73de337d-2084-4971-89be-de1f717f41d3",
+                "title": "Book of Frufru 20",
+                "author": {
+                    "id": "3",
+                    "name": "Test Author1"
+                },
+                "description": "",
+                "genre": "fantasy",
+                "publicationDate": "2024-12-21T00:00:00Z"
+            },
+            {
+                "id": "8b0effb4-ff53-4b7a-bab3-ff0ebc1670ec",
+                "title": "Book of Frufru 18",
+                "author": {
+                    "id": "8",
+                    "name": "TS Lowe"
+                },
+                "description": "",
+                "genre": "fantasy",
+                "publicationDate": "2024-12-19T00:00:00Z"
+            }
+        ]
+    },
+    "secondBookList": {
+        "username": "notonapumpkin",
+        "recommendedBooks": [
+            {
+                "id": "065ce14d-2341-45f0-92d3-83dd2cde8b0b",
+                "title": "Book of Frufru 27",
+                "author": {
+                    "id": "1",
+                    "name": "Robin McKinley"
+                },
+                "description": "",
+                "genre": "fantasy",
+                "publicationDate": "2024-12-28T00:00:00Z"
+            },
+            {
+                "id": "55edf57e-2c62-4e55-bee0-3787dd12e3f4",
+                "title": "Book of Frufru 24",
+                "author": {
+                    "id": "9",
+                    "name": "Help Text"
+                },
+                "description": "",
+                "genre": "fantasy",
+                "publicationDate": "2024-12-25T00:00:00Z"
+            }
+        ]
+    }
+}
